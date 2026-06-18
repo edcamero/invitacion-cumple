@@ -1,17 +1,19 @@
 import React from 'react';
 import './components.css';
 
+const base = import.meta.env.BASE_URL;
+
 const DetailsSection = () => {
   // Placeholder data, waiting for user to provide real details
   const date = "4 de Julio";
-  const time = "XX:XX PM";
+  const time = "4:00 PM";
   const locationName = "Lugar por definir";
   const mapLink = "#"; 
 
   return (
     <div className="details-section animate-float-up delay-1 relative">
-      <img src="/images/djcatnip-hero2.png" alt="DJ Catnip" className="floating-character char-djcatnip animate-float" />
-      <img src="/images/mercat-hero3.png" alt="Mercat" className="floating-character char-mercat animate-float delay-2" />
+      <img src={`${base}images/djcatnip-hero2.png`} alt="DJ Catnip" className="floating-character char-djcatnip animate-float" />
+      <img src={`${base}images/mercat-hero3.png`} alt="Mercat" className="floating-character char-mercat animate-float delay-2" />
       
       <div className="details-card glass-card">
         <h3 className="details-title">Detalles de la Fiesta</h3>

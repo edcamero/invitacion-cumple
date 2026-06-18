@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import confetti from 'canvas-confetti';
 import './components.css';
 
+const base = import.meta.env.BASE_URL;
+
 const SurpriseBox = ({ onOpen }) => {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -46,7 +48,7 @@ const SurpriseBox = ({ onOpen }) => {
         <div className="box-body">
           <span className="tap-text">¡Toca para abrir!</span>
         </div>
-        {isOpen && <img src="/images/gabby-exit.png" alt="Surprise" className="surprise-character" />}
+        {isOpen && <img src={`${base}images/gabby-exit.png`} alt="Surprise" className="surprise-character" />}
       </div>
     </div>
   );
