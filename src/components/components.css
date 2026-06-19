@@ -174,7 +174,8 @@
   position: absolute;
   max-width: 120px;
   z-index: 10;
-  filter: drop-shadow(var(--shadow-md));
+  filter: drop-shadow(0 10px 15px rgba(0, 0, 0, 0.1));
+  backface-visibility: hidden;
 }
 
 /* Hero Section Characters */
@@ -290,8 +291,10 @@
 
 .animate-float {
   animation: float 3s ease-in-out infinite;
+  will-change: transform;
 }
 
 .animate-pulse-slow {
   animation: pulseSlow 4s ease-in-out infinite;
+  will-change: opacity, transform;
 }

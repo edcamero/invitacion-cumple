@@ -1,24 +1,31 @@
-import React, { useState } from 'react';
+import React, { useState, Suspense, useCallback } from 'react';
 import SurpriseBox from './components/SurpriseBox';
-import HeroSection from './components/HeroSection';
-import DetailsSection from './components/DetailsSection';
-import WhatsAppButton from './components/WhatsAppButton';
 import './index.css';
+
+const HeroSection = React.lazy(() => import('./components/HeroSection'));
+const DetailsSection = React.lazy(() => import('./components/DetailsSection'));
+const WhatsAppButton = React.lazy(() => import('./components/WhatsAppButton'));
 
 function App() {
   const [isOpened, setIsOpened] = useState(false);
 
+  const handleOpen = useCallback(() => {
+    setIsOpened(true);
+  }, []);
+
   return (
     <div className="app-container">
       {!isOpened && (
-        <SurpriseBox onOpen={() => setIsOpened(true)} />
+        <SurpriseBox onOpen={handleOpen} />
       )}
       
       {isOpened && (
         <main className="invitation-content">
-          <HeroSection />
-          <DetailsSection />
-          <WhatsAppButton />
+          <Suspense fallback={<div className="loading-spinner" style={{ textAlign: 'center', padding: '2rem', color: 'var(--color-primary-dark)' }}>Cargando la magia...</div>}>
+            <HeroSection />
+            <DetailsSection />
+            <WhatsAppButton />
+          </Suspense>
         </main>
       )}
     </div>

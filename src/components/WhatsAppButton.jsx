@@ -12,8 +12,8 @@ const WhatsAppButton = () => {
 
   return (
     <div className="cta-section animate-float-up delay-2 relative">
-      <img src={`${base}images/kittyfairy-hero.png`} alt="Kitty Fairy" className="floating-character char-kittyfairy animate-float delay-1" />
-      <img src={`${base}images/pillowcat-hero.png`} alt="Pillow Cat" className="floating-character char-pillowcat animate-float delay-2" />
+      <img src={`${base}images/kittyfairy-hero.webp`} alt="Kitty Fairy" className="floating-character char-kittyfairy animate-float delay-1" />
+      <img src={`${base}images/pillowcat-hero.webp`} alt="Pillow Cat" className="floating-character char-pillowcat animate-float delay-2" />
       <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className="btn-primary animate-pop-in">
         <span className="icon-whatsapp">💬</span>
         Confirmar Asistencia
@@ -22,4 +22,4 @@ const WhatsAppButton = () => {
   );
 };
 
-export default WhatsAppButton;
+export default React.memo(WhatsAppButton);

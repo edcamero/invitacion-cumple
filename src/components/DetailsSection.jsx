@@ -12,8 +12,8 @@ const DetailsSection = () => {
 
   return (
     <div className="details-section animate-float-up delay-1 relative">
-      <img src={`${base}images/djcatnip-hero2.png`} alt="DJ Catnip" className="floating-character char-djcatnip animate-float" />
-      <img src={`${base}images/mercat-hero3.png`} alt="Mercat" className="floating-character char-mercat animate-float delay-2" />
+      <img src={`${base}images/djcatnip-hero2.webp`} alt="DJ Catnip" className="floating-character char-djcatnip animate-float" />
+      <img src={`${base}images/mercat-hero3.webp`} alt="Mercat" className="floating-character char-mercat animate-float delay-2" />
       
       <div className="details-card glass-card">
         <h3 className="details-title">Detalles de la Fiesta</h3>
@@ -47,4 +47,4 @@ const DetailsSection = () => {
   );
 };
 
-export default DetailsSection;
+export default React.memo(DetailsSection);
