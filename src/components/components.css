@@ -144,10 +144,40 @@
 }
 
 .map-link {
+  display: inline-block;
+  margin-top: 0.25rem;
   color: var(--color-primary-dark);
   text-decoration: underline;
   font-size: 0.9rem;
   font-weight: bold;
+  min-height: 44px;
+  line-height: 44px;
+}
+
+.location-address {
+  margin: 0.1rem 0 0;
+  color: var(--color-text);
+  font-size: 0.85rem;
+  opacity: 0.75;
+}
+
+.phone-link {
+  display: inline-block;
+  margin-top: 0.1rem;
+  color: var(--color-primary-dark);
+  font-size: 1.05rem;
+  font-weight: bold;
+  text-decoration: none;
+  min-height: 44px;
+  line-height: 44px;
+}
+
+.phone-link:hover,
+.phone-link:focus {
+  text-decoration: underline;
+  outline: 2px solid var(--color-primary-dark);
+  outline-offset: 2px;
+  border-radius: 4px;
 }
 
 .cta-section {
@@ -156,7 +186,9 @@
 }
 
 .icon-whatsapp {
-  font-size: 1.5rem;
+  width: 1.5rem;
+  height: 1.5rem;
+  flex-shrink: 0;
 }
 
 /* Gabby's Dollhouse Asset Styles */
@@ -258,6 +290,21 @@
   top: 10%;
   right: 15%;
   max-width: 50px;
+}
+
+/* Mariposas en sección CTA */
+.butterfly-lb {
+  bottom: 5px;
+  left: 4%;
+  max-width: 68px;
+  opacity: 0.88;
+}
+
+.butterfly-rm {
+  top: -10px;
+  right: 4%;
+  max-width: 58px;
+  opacity: 0.88;
 }
 
 /* Surprise Box Image */

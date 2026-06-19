@@ -1,5 +1,6 @@
 import React, { useState, Suspense, useCallback } from 'react';
 import SurpriseBox from './components/SurpriseBox';
+import Sparkles from './components/Sparkles';
 import './index.css';
 
 const HeroSection = React.lazy(() => import('./components/HeroSection'));
@@ -15,10 +16,11 @@ function App() {
 
   return (
     <div className="app-container">
+      <Sparkles />
       {!isOpened && (
         <SurpriseBox onOpen={handleOpen} />
       )}
-      
+
       {isOpened && (
         <main className="invitation-content">
           <Suspense fallback={<div className="loading-spinner" style={{ textAlign: 'center', padding: '2rem', color: 'var(--color-primary-dark)' }}>Cargando la magia...</div>}>

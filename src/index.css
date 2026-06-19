@@ -116,6 +116,36 @@ h1, h2, h3, h4, h5, h6 {
   animation: floatUp 0.8s ease-out forwards;
 }
 
+/* ── Contenedor raíz ── */
+.app-container {
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+}
+
+.invitation-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 480px;
+  margin: 0 auto;
+  padding: 0 0 2rem;
+  position: relative;
+  z-index: 2;
+}
+
+/* ── Reducción de movimiento ── */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
 /* Botón interactivo */
 .btn-primary {
   display: inline-flex;
