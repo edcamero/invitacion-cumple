@@ -3,7 +3,7 @@ import './components.css';
 
 const base = import.meta.env.BASE_URL;
 
-const SurpriseBox = ({ onOpen }) => {
+const SurpriseBox = ({ onOpen, guestName }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const handleTap = async () => {
@@ -47,8 +47,10 @@ const SurpriseBox = ({ onOpen }) => {
     <div className={`surprise-container ${isOpen ? 'open' : ''}`} onClick={!isOpen ? handleTap : undefined}>
       <div className={`surprise-box ${isOpen ? 'explode' : 'animate-shake'}`}>
         <div className="box-lid"></div>
-        <div className="box-body">
-          <span className="tap-text">¡Toca para abrir!</span>
+        <div className="box-body" style={{ width: '100%', textAlign: 'center' }}>
+          <span className="tap-text" style={{ display: 'block', textAlign: 'center', padding: '0 5px', whiteSpace: 'pre-line' }}>
+            {guestName ? `¡Hola ${guestName},\n toca para abrir!` : '¡Toca para abrir!'}
+          </span>
         </div>
         {isOpen && <img src={`${base}images/gabby-exit.webp`} alt="Surprise" className="surprise-character" />}
       </div>

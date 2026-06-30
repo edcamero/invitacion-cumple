@@ -4,9 +4,10 @@ import { EVENT } from '../config';
 
 const base = import.meta.env.BASE_URL;
 
-const WhatsAppButton = () => {
+const WhatsAppButton = ({ phone }) => {
   const encodedMessage = encodeURIComponent(EVENT.confirmationMessage);
-  const whatsappUrl = `https://wa.me/${EVENT.confirmationPhone}?text=${encodedMessage}`;
+  const targetPhone = phone || EVENT.confirmationPhone;
+  const whatsappUrl = `https://wa.me/${targetPhone}?text=${encodedMessage}`;
 
   return (
     <div className="cta-section animate-float-up delay-2 relative">
